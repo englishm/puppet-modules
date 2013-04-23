@@ -6,7 +6,7 @@ class ruby::windows(
   $install_dir = undef,
   $file_cache_dir = params_lookup('file_cache_dir', 'global'),
 ) {
-  $devkit_source_url = "https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe"
+  $devkit_source_url = "http://rubyforge.org/frs/download.php/76805/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe"
   $devkit_installer_path = "${file_cache_dir}\\devkit.exe"
   $ruby_source_url = "http://cdn.rubyinstaller.org/archives/1.9.3-p392/rubyinstaller-1.9.3-p392.exe"
   $ruby_installer_path = "${file_cache_dir}\\ruby.exe"
