@@ -13,7 +13,7 @@ class vagrant_installer::staging::posix {
   # Calculate variables based on operating system
   #------------------------------------------------------------------
   $extra_autotools_ldflags = $operatingsystem ? {
-    'Darwin' => "-R${embedded_dir}/lib",
+    'Darwin' => "",
     default  => '',
   }
 
