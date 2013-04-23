@@ -41,25 +41,23 @@
 
      <!-- The directory where we'll install Vagrant -->
      <Directory Id="TARGETDIR" Name="SourceDir">
-       <Directory Id="ProgramFilesFolder">
-         <Directory Id="MANUFACTURERDIR" Name="HashiCorp">
-           <Directory Id="VAGRANTAPPDIR" Name="Vagrant">
-             <Component Id="VagrantBin"
-                        Guid="{12a01bfc-ae9e-4543-8a32-47865cc03071}">
-               <!--
+       <Directory Id="MANUFACTURERDIR" Name="HashiCorp">
+         <Directory Id="VAGRANTAPPDIR" Name="Vagrant">
+           <Component Id="VagrantBin"
+             Guid="{12a01bfc-ae9e-4543-8a32-47865cc03071}">
+             <!--
                  Add our bin dir to the PATH so people can use
                  `vagrant` right away in the shell.
                -->
                <Environment Id="Environment"
-                            Name="PATH"
-                            Action="set"
-                            Part="last"
-                            System="yes"
-                            Value="[VAGRANTAPPDIR]bin" />
+                 Name="PATH"
+                 Action="set"
+                 Part="last"
+                 System="yes"
+                 Value="[VAGRANTAPPDIR]bin" />
              </Component>
            </Directory>
          </Directory>
-       </Directory>
      </Directory>
 
      <!-- Define the features of our install -->
