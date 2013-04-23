@@ -61,4 +61,14 @@ class ruby::windows(
       File["${install_dir}/config.yml"],
     ],
   }
+
+  file { "${install_dir}/lib/ruby/site_ruby/devkit.rb":
+    content => template("ruby/windows/devkit.rb.erb"),
+    require => Exec["install-devkit"],
+  }
+
+  file { "${install_dir}/lib/ruby/site_ruby/1.9.1/rubygems/defaults/operating_system.rb":
+    content => template("ruby/windows/operating_system.rb.erb"),
+    require => Exec["install-devkit"],
+  }
 }
