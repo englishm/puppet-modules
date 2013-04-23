@@ -36,7 +36,7 @@
 
      <!-- Some steps for our installation -->
      <InstallExecuteSequence>
-       <ScheduleReboot After="InstallFinalize" />
+       <ScheduleReboot After="InstallFinalize"><![CDATA[UILevel <> 2]]></ScheduleReboot>
      </InstallExecuteSequence>
 
      <!-- The directory where we'll install Vagrant -->
