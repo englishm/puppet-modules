@@ -17,7 +17,7 @@ class build_essential {
     }
 
     'CentOS': {
-      package { ["gcc", "make"]:
+      package { ["chrpath", "gcc", "make"]:
         ensure => installed,
       }
 
