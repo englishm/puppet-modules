@@ -10,7 +10,7 @@ class zlib(
 ) {
   require build_essential
 
-  $source_filename  = "zlib-1.2.7.tar.gz"
+  $source_filename  = "zlib-1.2.8.tar.gz"
   $source_url = "http://zlib.net/${source_filename}"
   $source_file_path = "${file_cache_dir}/${source_filename}"
   $source_dir_name  = regsubst($source_filename, '^(.+?)\.tar\.gz$', '\1')
