@@ -10,7 +10,7 @@ class ruby::source(
 ) {
   require build_essential
 
-  $source_filename  = "ruby-1.9.3-p327.tar.gz"
+  $source_filename  = "ruby-1.9.3-p448.tar.gz"
   $source_url = "http://ftp.ruby-lang.org/pub/ruby/1.9/${source_filename}"
   $source_file_path = "${file_cache_dir}/${source_filename}"
   $source_dir_name  = regsubst($source_filename, '^(.+?)\.tar\.gz$', '\1')
