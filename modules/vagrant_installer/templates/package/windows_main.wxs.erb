@@ -39,13 +39,17 @@
        <ScheduleReboot After="InstallFinalize"><![CDATA[UILevel <> 2]]></ScheduleReboot>
      </InstallExecuteSequence>
 
+     <!-- Get the proper system directory -->
+     <SetDirectory Id="WINDOWSVOLUME" Value="[WindowsVolume]" />
+
      <!-- The directory where we'll install Vagrant -->
      <Directory Id="TARGETDIR" Name="SourceDir">
-       <Directory Id="MANUFACTURERDIR" Name="HashiCorp">
-         <Directory Id="VAGRANTAPPDIR" Name="Vagrant">
-           <Component Id="VagrantBin"
-             Guid="{12a01bfc-ae9e-4543-8a32-47865cc03071}">
-             <!--
+       <Directory Id="WINDOWSVOLUME">
+         <Directory Id="MANUFACTURERDIR" Name="HashiCorp">
+           <Directory Id="VAGRANTAPPDIR" Name="Vagrant">
+             <Component Id="VagrantBin"
+               Guid="{12a01bfc-ae9e-4543-8a32-47865cc03071}">
+               <!--
                  Add our bin dir to the PATH so people can use
                  `vagrant` right away in the shell.
                -->
@@ -58,6 +62,7 @@
              </Component>
            </Directory>
          </Directory>
+       </Directory>
      </Directory>
 
      <!-- Define the features of our install -->
